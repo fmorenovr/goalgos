@@ -14,18 +14,18 @@ In this section I introduce Sorting Algorithms
 
 <center>
 
-Algorithm | Worst Case | Average Case | Best case |
---- | --- | ---
-BucketSort | O(n².k) | O(n+k) | O(nlog(n)) |
-CountingSort | O(n+k) | O(n+k) | O(n+k) |
-PigeonHoleSort | O(n+k) | O(n+k) | O(n+k) |
-RadixSort | O(n.k/d) | O(n.k/d) | O(nlog(n)) |
+| Algorithm | Worst Case | Average Case | Best case |
+| --- | --- | --- | --- |
+| BucketSort | O(n².k) | O(n+k) | O(nlog(n)) |
+| CountingSort | O(n+k) | O(n+k) | O(n+k) |
+| PigeonHoleSort | O(n+k) | O(n+k) | O(n+k) |
+| RadixSort | O(n.k/d) | O(n.k/d) | O(nlog(n)) |
 
 Falta
-SpreadSort | O(n.(k/s+d)) | O(n.k/d) | O(n) |
-BurstSort | O(n.k/d) | O(n.k/d) | O(n) |
-FlashSort | O(n²) | O(n.+r) | O(n) |
-PostmanSort | O(n.k/d) | O(n.k/d) | O(n) |
+| SpreadSort | O(n.(k/s+d)) | O(n.k/d) | O(n) |
+| BurstSort | O(n.k/d) | O(n.k/d) | O(n) |
+| FlashSort | O(n²) | O(n.+r) | O(n) |
+| PostmanSort | O(n.k/d) | O(n.k/d) | O(n) |
 
 </center>
 

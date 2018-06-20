@@ -1,13 +1,16 @@
 package gosort
 
-import "sort"
+import(
+  "sort";
+  "github.com/jenazads/goutils"
+)
 
 type GoSortObject struct {
   values     []interface{}
-  comparator TypeComparator
+  comparator goutils.TypeComparator
 }
 
-func NewGoSortObject(arr []interface{}, comp TypeComparator) (*GoSortObject, error){
+func NewGoSortObject(arr []interface{}, comp goutils.TypeComparator) (*GoSortObject, error){
   if arr == nil {
     return nil, GoSortEmptyArray
   }
@@ -74,16 +77,16 @@ func (s *GoSortObject) EqualsThan(i, j int) bool {
 
 // return if is less or equals
 func (s *GoSortObject) LessEqualsThan(i, j int) bool {
-  return s.comparator(s.values[i], s.values[j]) == -2
+  return (s.comparator(s.values[i], s.values[j]) == -1 || s.comparator(s.values[i], s.values[j]) == 0)
 }
 
 // return if is greater or equals
 func (s *GoSortObject) GreaterEqualsThan(i, j int) bool {
-  return s.comparator(s.values[i], s.values[j]) == 2
+  return (s.comparator(s.values[i], s.values[j]) == 1 || s.comparator(s.values[i], s.values[j]) == 0)
 }
 
-// find the min element
-func (s *GoSortObject) findMinElement() interface{} {
+// find the min element and respective index
+func (s *GoSortObject) FindMinElementAndIndex() (interface{}, int) {
   var index = 0
   
   for i := 1; i < s.Len(); i++ {
@@ -91,11 +94,11 @@ func (s *GoSortObject) findMinElement() interface{} {
       index = i
     }
   }
-  return s.values[index];
+  return s.values[index], index
 }
 
-// find the max element
-func (s *GoSortObject) findMaxElement() interface{} {
+// find the max element and respective index
+func (s *GoSortObject) FindMaxElementAndIndex() (interface{},int) {
   var index = 0
   
   for i := 1; i < s.Len(); i++ {
@@ -103,6 +106,6 @@ func (s *GoSortObject) findMaxElement() interface{} {
       index = i
     }
   }
-  return s.values[index];
+  return s.values[index], index
 }
 
