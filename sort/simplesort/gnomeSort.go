@@ -8,7 +8,7 @@ import(
 func GnomeSort(arr []interface{}, comp goutils.TypeComparator, low, high int) () {
   i := low
   for i < high {
-    if i==0 {
+    if i==low {
       i=i+1
     }
     if comp(arr[i-1], arr[i]) == -1 || comp(arr[i-1], arr[i]) == 0 {
@@ -17,7 +17,7 @@ func GnomeSort(arr []interface{}, comp goutils.TypeComparator, low, high int) ()
       arr[i], arr[i-1] = arr[i-1], arr[i]
       i=i-1
       if i == -1 {
-        i = 0
+        i = low
       }
     }
   }
