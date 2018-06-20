@@ -1,6 +1,7 @@
 package gosort
 
 import(
+  "github.com/jenazads/golgos/sort/swapsort";
   "github.com/jenazads/golgos/sort/simplesort";
   "github.com/jenazads/golgos/sort/efficientsort";
 )
@@ -46,7 +47,6 @@ func (s* GoSortObject) PatienceSort(low, high int){
   simplesort.PatienceSort(s.values, s.comparator, low, high)
 }
 
-
 /**********************
 *                     *
 *   Efficient Sort    *
@@ -69,4 +69,46 @@ func (s* GoSortObject) MergeSort(low, high int){
 // Run as HeapSort(begin, end)
 func (s* GoSortObject) HeapSort(low, high int){
   efficientsort.HeapSort(s.values, s.comparator, low, high)
+}
+
+// Call TimSort in EfficientSort package
+// Run as TimSort(begin, end)
+func (s* GoSortObject) TimSort(low, high int){
+  efficientsort.TimSort(s.values, s.comparator, low, high)
+}
+
+/**********************
+*                     *
+*      Swap Sort      *
+*                     *
+**********************/
+
+// Call BubbleSort in SwapSort package
+// Run as BubbleSort(begin, end)
+func (s* GoSortObject) BubbleSort(low, high int){
+  swapsort.BubbleSort(s.values, s.comparator, low, high)
+}
+
+// Call CockTailSort in SwapSort package
+// Run as CockTailSort(begin, end)
+func (s* GoSortObject) CockTailSort(low, high int){
+  swapsort.CockTailSort(s.values, s.comparator, low, high)
+}
+
+// Call ShellSort in SwapSort package
+// Run as ShellSort(begin, end)
+func (s* GoSortObject) ShellSort(low, high int){
+  swapsort.ShellSort(s.values, s.comparator, low, high)
+}
+
+// Call CombSort in SwapSort package
+// Run as CombSort(begin, end)
+func (s* GoSortObject) CombSort(low, high int){
+  swapsort.CombSort(s.values, s.comparator, low, high)
+}
+
+// Call CycleSort in SwapSort package
+// Run as CycleSort(begin, end)
+func (s* GoSortObject) CycleSort(low, high int){
+  swapsort.CycleSort(s.values, s.comparator, low, high)
 }
