@@ -7,12 +7,11 @@ import(
 // Shell Sort
 func ShellSort(arr []interface{}, comp goutils.TypeComparator, low, high int) () {
   size := high - low;
-  gap:=size/2;
-  for gap > 0 {
-    for i := gap; i < size; i += 1 {
+  for gap := size/2; gap > 0; gap/=2 {
+    for i := gap+low; i < high; i++ {
       j := i;
       temp := arr[i];
-      for j >= gap && (comp(arr[j-gap], temp) == 1) {
+      for (j >= gap+low) && (comp(arr[j-gap], temp) == 1) {
         arr[j] = arr[j - gap];
         j -= gap;
       }
