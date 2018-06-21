@@ -31,12 +31,13 @@ In this section I introduce Sorting Algorithms
 | MergeSort | O(nlog(n)) | O(nlog(n)) | O(nlog(n)) |
 | QuickSort | O(n²) | O(nlog(n)) | O(nlog(n)) |
 | HeapSort | O(nlog(n)) | O(nlog(n)) | O(nlog(n)) |
-| TimSort | O(nlog(n)) | O(nlog(n)) | O(n) |
+| TimSort | O((nlog(n))²) | O(nlog(n)) | O(n) |
 | TreeSort | O(n²) | O(nlog(n)) | O(nlog(n)) |
 | IntroSort | O(nlog(n)) | O(nlog(n)) | O(nlog(n)) |
 | TournamentSort | O(nlog(n)) | O(nlog(n)) | O(nlog(n)) |
 | SmoothSort | O(nlog(n)) | O(nlog(n)) | O(n) |
 | BlockSort | O(nlog(n)) | O(nlog(n)) | O(n) |
+| StrandSort | O(n²) | O(n²) | O(n) |
 
 </center>
 
@@ -48,9 +49,11 @@ In this section I introduce Sorting Algorithms
 | --- | --- | --- | --- |
 | BubbleSort | O(n²) | O(n²) | O(n) |
 | CockTailSort | O(n²) | O(n²) | O(n) |
-| ShellSort | O(n²) | depends | O(nlog(n)) |
+| ShellSort | O((nlog(n))²) | O((nlog(n))²) | O(n) |
 | CombSort | O(n²) | O(n²) | O(nlog(n)) |
 | CycleSort | O(n²) | O(n²) | O(n²) |
+| CircleSort | O() | O() | O() |
+| PermutationSort | O() | O() | O() |
 
 </center>
 
@@ -59,7 +62,7 @@ In this section I introduce Sorting Algorithms
 * Note: k in Bucket Sort means number of buckets.  
 * Note: k in CountingSort means the number of different numbers in array.  
 * Note: k in PigeonHoleSort means the number of range number.  
-* Note: k in RadixSort means the number of range number and d means the digits of the numbers.  
+* Note: k in RadixSort means the number of range number.
 * Note: k in SpreadSort means the number of range number and d means the digits of the numbers.  
 
 <center>
@@ -69,11 +72,12 @@ In this section I introduce Sorting Algorithms
 | BucketSort | O(n².k) | O(n+k) | O(nlog(n)) |
 | CountingSort | O(n+k) | O(n+k) | O(n+k) |
 | PigeonHoleSort | O(n+k) | O(n+k) | O(n+k) |
-| RadixSort | O(n.k/d) | O(n.k/d) | O(nlog(n)) |
+| RadixSort | O(n.k) | O(n.k) | O(nk) |
 | SpreadSort | O(n.(k/s+d)) | O(n.k/d) | O(n) |
 | BurstSort | O(n.k/d) | O(n.k/d) | O(n) |
 | FlashSort | O(n²) | O(n.+r) | O(n) |
 | PostmanSort | O(n.k/d) | O(n.k/d) | O(n) |
+| ProxmapSort | O(n²) | O(n) | O(n) |
 
 </center>
 
@@ -94,10 +98,14 @@ In this section I introduce Sorting Algorithms
 
 ### Parallel Sort
 
+* Note: t in SleepSort means the time of seconds sleeped by the number value.  
+
 <center>
 
 | Algorithm | Worst Case | Average Case | Best case |
 | --- | --- | --- | --- |
+| BrickSort | O(n²) | O(n²) | O(n) |
+| SleepSort | O(nt) | O(nt) | O(nt) |
 | SampleSort | O(Sum (ai)) | O(Sum (ai)) | O(n) |
 | CubeSort | O(nlog(n)) | O(nlog(n)) | O(n) |
 

@@ -14,6 +14,7 @@ In this section I introduce Sorting Algorithms
 Falta
 | SampleSort | O(Sum (ai)) | O(Sum (ai)) | O(n) |
 | CubeSort | O(nlog(n)) | O(nlog(n)) | O(n) |
+| BrickSort | O(n²) | O(n²) | O(n) |
 
 </center>
 

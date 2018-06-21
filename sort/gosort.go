@@ -8,15 +8,28 @@ import(
 type GoSortObject struct {
   values     []interface{}
   comparator goutils.TypeComparator
+  operator goutils.TypeOperator
 }
 
+// new GoSort Object
 func NewGoSortObject(arr []interface{}, comp goutils.TypeComparator) (*GoSortObject, error){
   if arr == nil {
     return nil, GoSortEmptyArray
   }
   return &GoSortObject{
     values: arr,
-    comparator: comp}, nil
+    comparator: comp,
+    operator: nil}, nil
+}
+
+func NewGoSortObjectOp(arr []interface{}, comp goutils.TypeComparator, op goutils.TypeOperator) (*GoSortObject, error){
+  if arr == nil {
+    return nil, GoSortEmptyArray
+  }
+  return &GoSortObject{
+    values: arr,
+    comparator: comp,
+    operator: op}, nil
 }
 
 // Sort sorts values (in-place) with respect to the given comparator.

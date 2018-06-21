@@ -17,10 +17,5 @@ func ShellSort(arr []interface{}, comp goutils.TypeComparator, low, high int) ()
       }
       arr[j] = temp;
     }
-    if gap == 2 {
-      gap = 1
-    } else {
-      gap = gap*10/22
-    }
   }
 }

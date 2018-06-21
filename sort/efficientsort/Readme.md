@@ -21,6 +21,7 @@ Falta
 | TournamentSort | O(nlog(n)) | O(nlog(n)) | O(nlog(n)) |
 | SmoothSort | O(nlog(n)) | O(nlog(n)) | O(n) |
 | BlockSort | O(nlog(n)) | O(nlog(n)) | O(n) |
+| StrandSort | O(n²) | O(n²) | O(n) |
 
 </center>
 
