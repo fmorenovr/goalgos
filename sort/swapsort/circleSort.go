@@ -12,7 +12,6 @@ func CircleSort(arr []interface{}, comp goutils.TypeComparator, low, high int) (
 }
 
 func circleSort(arr []interface{}, comp goutils.TypeComparator, low, high int) bool {
-  
   swapped := false
   if low == high {
     return false

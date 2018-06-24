@@ -64,6 +64,7 @@ In this section I introduce Sorting Algorithms
 * Note: k in PigeonHoleSort means the number of range number.  
 * Note: k in RadixSort means the number of range number.
 * Note: k in SpreadSort means the number of range number and d means the digits of the numbers.  
+* Notes: Couting sort and Radix sort is only for integers.
 
 <center>
 

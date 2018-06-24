@@ -48,6 +48,12 @@ func (s *GoSortObject) IsSorted() bool {
 	return true
 }
 
+// return sub array
+func (s *GoSortObject) SubArray(low, high int) (*GoSortObject) {
+  gosortObject, _ := NewGoSortObjectOp(s.values[low:high], s.comparator, s.operator)
+  return gosortObject
+}
+
 // return True if is sorted in this part
 func (s *GoSortObject) IsSortedPart(begin, end int) bool {
 	for i := end - 1; i > begin; i-- {

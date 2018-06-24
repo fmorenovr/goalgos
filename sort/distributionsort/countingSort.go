@@ -1,25 +1,30 @@
 package distributionsort
 
 import(
+  "fmt"
   "github.com/jenazads/goutils";
+  "github.com/jenazads/goalgs/sort/sortfunctions";
 )
 
-// Counting Sort
+// Counting Sort or Histogram Sort
 func CountingSort(arr []interface{}, comp goutils.TypeComparator, op goutils.TypeOperator, low, high int) () {
-  maxValueIndex, minValueIndex := FindMaxMinElementIndex(arr, comp, low, high)
+  maxValueIndex, minValueIndex := sortfunctions.FindMaxMinElementIndex(arr, comp, low, high)
   minValue, maxValue := arr[minValueIndex], arr[maxValueIndex]
   numOfCounts := goutils.ToInt(op(op(maxValue, minValue, "-"), 1, "+"));
-  counts := make([]interface{}, numOfCounts)
+  counts := make([]int, numOfCounts)
   
   for i:=low; i<high; i++ {
-    index_curr := goutils.ToInt(op(arr[i], minValue, "-"))
-    counts[index_curr] = goutils.ToInt(op(counts[index_curr], 1, "+"));
+    curr_index := goutils.ToInt(op(arr[i], minValue, "-"))
+    counts[curr_index] = goutils.ToInt(op(counts[curr_index], 1, "+"));
   }
-  /*j:=low;
-  for i:=minValue; i<=maxValue; i++ {
-    for z:=0; z<counts[i-minValue]; z++ {
-      arr[j] = i;
-      j+=1
+  index:=low;
+  fmt.Println(counts)
+  for i:=goutils.ToInt(minValue); i<=goutils.ToInt(maxValue); i++ {
+    curr_index := goutils.ToInt(op(i, minValue, "-"))
+    fmt.Println("i: ", i, "min: ", goutils.ToInt(minValue), "curr_index: ",curr_index)
+    for z:=0; z<goutils.ToInt(counts[curr_index]); z++ {
+      arr[index] = i;
+      index++;
     }
-  }*/
+  }
 }
