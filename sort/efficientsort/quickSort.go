@@ -15,6 +15,28 @@ func QuickSort(arr []interface{}, comp goutils.TypeComparator, low, high int) ()
 
 // Fast pivoting selection
 func QuickPartition(arr []interface{}, comp goutils.TypeComparator, low, high int) int{
+  x := arr[low];
+  i := low+1;
+  j := high;
+  for i < j {
+    for (i < j) && (comp(arr[i], x)==-1 || comp(arr[i], x)==0) {
+      i++
+    }
+    for (i < j) && (comp(arr[j], x)==1) {
+      j--
+    }
+    if i == j {
+      break;
+    }
+    arr[j], arr[i] = arr[i], arr[j]
+  }
+  if comp(arr[i], x)==1 {
+    i--;
+  }
+  arr[low], arr[i] = arr[i], x;
+  return i;
+  /*
+  //Hoare Partition
   i := low
   j := high + 1;
   for true {
@@ -35,15 +57,18 @@ func QuickPartition(arr []interface{}, comp goutils.TypeComparator, low, high in
   }
   arr[j], arr[low] = arr[low], arr[j]
   return j;
-  /*int x = arr[high];
-  int i = (low - 1);
-
-  for (int j = low; j <= high-1; j++){
-    if (arr[j] <= x){
+  */
+  /*
+  //Lomuto Partition
+  x := arr[high];
+  i := low-1;
+  for j := low; j <= high-1; j++ {
+    if comp(arr[j], x) == -1 ||  comp(arr[j], x) == 0 {
       i++;
-      swap(arr[i], arr[j]);
+      arr[j], arr[i] = arr[i], arr[j];
     }
   }
-  swap(arr[i + 1], arr[high]);
-  return (i + 1);*/
+  arr[high], arr[i+1] = arr[i+1], arr[high];
+  return (i + 1);
+  */
 }

@@ -81,3 +81,15 @@ func IsPowerOfTwo(x int) (bool, uint){
 func SetPowerOfTwo(x uint) int {
   return 2<<(x-1)
 }
+
+// return the highest number less than N
+func HighestPowerofTwoLessThan(n int) (int) {
+  res := 0;
+  for i:=n; i>=1; i-- {
+    if (i & (i-1)) == 0 {
+      res = i;
+      break;
+    }
+  }
+  return res;
+}

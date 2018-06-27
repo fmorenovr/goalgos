@@ -6,20 +6,33 @@ import(
 
 // Heap Sort
 func HeapSort(arr []interface{}, comp goutils.TypeComparator, low, high int) () {
-  // Build heap (rearrange array)
-  for i:=high/2-1; i>=low; i-=1 {
-    Heapify(arr, comp, i, high);
-  }
+  BuildMaxHeap(arr,comp,low,high);
   // One by one extract an element from heap
   for i:=high-1; i>=low; i-=1 {
     arr[i], arr[low] = arr[low], arr[i]
     // call max heapify on the reduced heap
-    Heapify(arr, comp, low, i);
+    MaxHeapify(arr, comp, low, i);
   }
 }
 
-// To heapify a subtree rooted with node i which is an index in arr[]. n is size of heap
-func Heapify(arr []interface{}, comp goutils.TypeComparator, low, high int){
+// Build Max heap (rearrange array)
+func BuildMaxHeap(arr []interface{}, comp goutils.TypeComparator, low, high int){
+  size:=high-low
+  for i:=size/2-1; i>=low; i-=1 {
+    MaxHeapify(arr, comp, i, high);
+  }
+}
+
+// Build Min heap (rearrange array)
+func BuildMinHeap(arr []interface{}, comp goutils.TypeComparator, low, high int){
+  size:=high-low
+  for i:=size/2-1; i>=low; i-=1 {
+    MinHeapify(arr, comp, i, high);
+  }
+}
+
+// To max heapify a subtree rooted with node i which is an index in arr[]
+func MaxHeapify(arr []interface{}, comp goutils.TypeComparator, low, high int){
   largest := low  // Initialize largest as root
   left := 2*low + 1
   right := 2*low + 2
@@ -36,6 +49,28 @@ func Heapify(arr []interface{}, comp goutils.TypeComparator, low, high int){
   if largest != low {
     arr[largest], arr[low] = arr[low], arr[largest]
     // Recursively heapify the affected sub-tree
-    Heapify(arr, comp, largest, high);
+    MaxHeapify(arr, comp, largest, high);
+  }
+}
+
+// To min heapify a subtree rooted with node i which is an index in arr[]
+func MinHeapify(arr []interface{}, comp goutils.TypeComparator, low, high int){
+  smallest := low  // Initialize largest as root
+  left := 2*low + 1
+  right := 2*low + 2
+
+  // If left child is larger than root
+  if left < high && comp(arr[left], arr[smallest]) == -1 {
+    smallest = left;
+  }
+  // If right child is larger than largest so far
+  if right < high && comp(arr[right], arr[smallest]) == -1 {
+    smallest = right;
+  }
+  // If largest is not root
+  if smallest != low {
+    arr[smallest], arr[low] = arr[low], arr[smallest]
+    // Recursively heapify the affected sub-tree
+    MinHeapify(arr, comp, smallest, high);
   }
 }

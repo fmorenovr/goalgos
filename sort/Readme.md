@@ -11,14 +11,14 @@ In this section I introduce Sorting Algorithms
 
 <center>
 
-| Algorithm | Worst Case | Average Case | Best case |
+| Algorithm | Best Case | Average Case | Worst case |
 | --- | --- | --- | --- |
-| GnomeSort | O(n²) | O(n²) | O(n) |
-| InsertionSort | O(n²) | O(n²) | O(n) |
+| GnomeSort | O(n) | O(n²) | O(n²) |
+| InsertionSort | O(n) | O(n²) | O(n²) |
 | SelectionSort | O(n²) | O(n²) | O(n²) |
-| SlowSort | O(np) | O(np) | O(n^(log(n)/2)) |
-| LibrarySort | O(n²) | O(nlog(n)) | O(n) |
-| PatienceSort | O(nlog(n)) | O(nlog(n)) | O(n) |
+| SlowSort | O(n^(log(n)/2)) | O(np) | O(np) |
+| LibrarySort | O(n) | O(nlog(n)) | O(n²) |
+| PatienceSort | O(n) | O(nlog(n)) | O(nlog(n)) |
 
 </center>
 
@@ -26,18 +26,18 @@ In this section I introduce Sorting Algorithms
 
 <center>
 
-| Algorithm | Worst Case | Average Case | Best case |
+| Algorithm | Best Case | Average Case | Worst case |
 | --- | --- | --- | --- |
 | MergeSort | O(nlog(n)) | O(nlog(n)) | O(nlog(n)) |
-| QuickSort | O(n²) | O(nlog(n)) | O(nlog(n)) |
+| QuickSort | O(nlog(n)) | O(nlog(n)) | O(n²) |
 | HeapSort | O(nlog(n)) | O(nlog(n)) | O(nlog(n)) |
-| TimSort | O((nlog(n))²) | O(nlog(n)) | O(n) |
-| TreeSort | O(n²) | O(nlog(n)) | O(nlog(n)) |
+| TimSort | O(n) | O(nlog(n)) | O(nlog(n)) |
+| TreeSort | O(n) | O(nlog(n)) | O(nlog(n)) |
 | IntroSort | O(nlog(n)) | O(nlog(n)) | O(nlog(n)) |
 | TournamentSort | O(nlog(n)) | O(nlog(n)) | O(nlog(n)) |
-| SmoothSort | O(nlog(n)) | O(nlog(n)) | O(n) |
-| BlockSort | O(nlog(n)) | O(nlog(n)) | O(n) |
-| StrandSort | O(n²) | O(n²) | O(n) |
+| SmoothSort | O(n) | O(nlog(n)) | O(nlog(n)) |
+| BlockSort | O(n) | O(nlog(n)) | O(nlog(n)) |
+| StrandSort | O(n) | O(n²) | O(n²) |
 
 </center>
 
@@ -45,12 +45,12 @@ In this section I introduce Sorting Algorithms
 
 <center>
 
-| Algorithm | Worst Case | Average Case | Best case |
+| Algorithm | Best Case | Average Case | Worst case |
 | --- | --- | --- | --- |
-| BubbleSort | O(n²) | O(n²) | O(n) |
-| CockTailSort | O(n²) | O(n²) | O(n) |
-| ShellSort | O((nlog(n))²) | O((nlog(n))²) | O(n) |
-| CombSort | O(n²) | O(n²) | O(nlog(n)) |
+| BubbleSort | O(n) | O(n²) | O(n²) |
+| CockTailSort | O(n) | O(n²) | O(n²) |
+| ShellSort | O(n) | O(n(log(n))²) | O((nlog(n))²) |
+| CombSort | O(nlog(n)) | O(n²) | O(n²) |
 | CycleSort | O(n²) | O(n²) | O(n²) |
 | CircleSort | O() | O() | O() |
 | PermutationSort | O() | O() | O() |
@@ -68,17 +68,17 @@ In this section I introduce Sorting Algorithms
 
 <center>
 
-| Algorithm | Worst Case | Average Case | Best case |
+| Algorithm | Best Case | Average Case | Worst case |
 | --- | --- | --- | --- |
-| BucketSort | O(n².k) | O(n+k) | O(nlog(n)) |
+| BucketSort | O(n+k) | O(n+k) | O(n²) |
 | CountingSort | O(n+k) | O(n+k) | O(n+k) |
 | PigeonHoleSort | O(n+k) | O(n+k) | O(n+k) |
 | RadixSort | O(n.k) | O(n.k) | O(nk) |
-| SpreadSort | O(n.(k/s+d)) | O(n.k/d) | O(n) |
-| BurstSort | O(n.k/d) | O(n.k/d) | O(n) |
-| FlashSort | O(n²) | O(n.+r) | O(n) |
-| PostmanSort | O(n.k/d) | O(n.k/d) | O(n) |
-| ProxmapSort | O(n²) | O(n) | O(n) |
+| SpreadSort | O(n) | O(n.k/d) | O(n.(k/s+d)) |
+| BurstSort | O(n) | O(n.k/d) | O(n.k/d) |
+| FlashSort | O(n) | O(n.+r) | O(n²) |
+| PostmanSort | O(n) | O(n.k/d) | O(n.k/d) |
+| ProxmapSort | O(n) | O(n) | O(n²) |
 
 </center>
 
@@ -86,14 +86,15 @@ In this section I introduce Sorting Algorithms
 
 <center>
 
-| Algorithm | Worst Case | Average Case | Best case |
+| Algorithm | Best Case | Average Case | Worst case |
 | --- | --- | --- | --- |
 | PancakeSort | O(n) | O(n) | O(n) |
 | BitonicSort | O(log²(n)) | O(log²(n)) | O(log²(n)) |
-| BogoSort | O(Inf) | O(n.n!) | O(n) |
+| BogoSort | O(n) | O(n.n!) | O(Inf) |
 | StoogeSort | O(n^(log(3)/log(1.5))) | O(n^(log(3)/log(1.5))) | O(n^(log(3)/log(1.5))) |
-| BeadSort | O(Sum (ai)) | O(Sum (ai)) | O(n) |
+| BeadSort | O(n) | O(Sum (ai)) | O(Sum (ai)) |
 | SpaghettiSort | O(n) | O(n) | O(n) |
+| NetworkSort | O(log²(n)) | O(log²(n)) | O(log²(n)) |
 
 </center>
 
@@ -103,12 +104,12 @@ In this section I introduce Sorting Algorithms
 
 <center>
 
-| Algorithm | Worst Case | Average Case | Best case |
+| Algorithm | Best Case | Average Case | Worst case |
 | --- | --- | --- | --- |
-| BrickSort | O(n²) | O(n²) | O(n) |
+| BrickSort | O(n) | O(n²) | O(n²) |
 | SleepSort | O(nt) | O(nt) | O(nt) |
-| SampleSort | O(Sum (ai)) | O(Sum (ai)) | O(n) |
-| CubeSort | O(nlog(n)) | O(nlog(n)) | O(n) |
+| SampleSort | O(n) | O(Sum (ai)) | O(Sum (ai)) |
+| CubeSort | O(n) | O(nlog(n)) | O(nlog(n)) |
 
 </center>
 
