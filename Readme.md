@@ -1,4 +1,9 @@
 # Golang + Algorithms = goalgs
 
 goalgs (Golang ALGrithmS) is a Golang implementation of differents algorithms.  
-You can see an extended doc in [godocs](https://godoc.org/github.com/jenazads/goalgs).
+You can see an extended doc in [godocs](https://godoc.org/github.com/jenazads/goalgos).
+
+Install it writing in terminal:
+
+    go get github.com/jenazads/goalgos
+
