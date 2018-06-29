@@ -1,12 +1,12 @@
 package gosort
 
 import(
-  "github.com/jenazads/goalgs/sort/hardsort";
-  "github.com/jenazads/goalgs/sort/swapsort";
-  "github.com/jenazads/goalgs/sort/simplesort";
-  "github.com/jenazads/goalgs/sort/parallelsort";
-  "github.com/jenazads/goalgs/sort/efficientsort";
-  "github.com/jenazads/goalgs/sort/distributionsort";
+  "github.com/jenazads/goalgos/sort/hardsort";
+  "github.com/jenazads/goalgos/sort/swapsort";
+  "github.com/jenazads/goalgos/sort/simplesort";
+  "github.com/jenazads/goalgos/sort/parallelsort";
+  "github.com/jenazads/goalgos/sort/efficientsort";
+  "github.com/jenazads/goalgos/sort/distributionsort";
 )
 
 /**********************

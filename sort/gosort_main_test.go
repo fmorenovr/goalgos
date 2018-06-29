@@ -1,7 +1,7 @@
 package gosort_test
 
 import(
-  "github.com/jenazads/goalgs/sort";
+  "github.com/jenazads/goalgos/sort";
   "github.com/jenazads/goutils";
   "fmt";
 )

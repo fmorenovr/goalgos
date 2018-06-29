@@ -2,7 +2,7 @@ package simplesort
 
 import(
   "github.com/jenazads/goutils";
-  "github.com/jenazads/goalgs/sort/sortfunctions";
+  "github.com/jenazads/goalgos/sort/sortfunctions";
 )
 
 // Selection Sort

@@ -2,8 +2,8 @@ package distributionsort
 
 import(
   "github.com/jenazads/goutils";
-  "github.com/jenazads/goalgs/sort/simplesort";
-  "github.com/jenazads/goalgs/sort/sortfunctions";
+  "github.com/jenazads/goalgos/sort/simplesort";
+  "github.com/jenazads/goalgos/sort/sortfunctions";
 )
 
 // PigeonHole Sort
