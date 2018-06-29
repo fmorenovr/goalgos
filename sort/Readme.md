@@ -1,11 +1,11 @@
 # Golang + Sort = goSort
 
 Golang implementation of sorting algothims.  
-You can see an extended doc in [godocs](https://godoc.org/github.com/Jenazads/golgos/sort).
+You can see an extended doc in [godocs](https://godoc.org/github.com/Jenazads/goalgos/sort).
 
 * Install it with:
 
-    go get github.com/jenazads/goalgs/sort
+      go get github.com/jenazads/goalgs/sort
 
 ## Sorting Algorithms
 
