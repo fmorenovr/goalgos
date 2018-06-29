@@ -46,6 +46,7 @@ func (s* GoSortObject) LibrarySort(low, high int){
 }
 
 // Call PatienceSort from SimpleSort package
+// Run as PatienceSort(begin, end)
 func (s* GoSortObject) PatienceSort(low, high int){
   simplesort.PatienceSort(s.values, s.comparator, low, high)
 }
@@ -66,6 +67,12 @@ func (s* GoSortObject) QuickSort(low, high int){
 // Run as MergeSort(begin, end)
 func (s* GoSortObject) MergeSort(low, high int){
   efficientsort.MergeSort(s.values, s.comparator, low, high-1)
+}
+
+// Call IntroSort from EfficientSort package
+// Run as IntroSort(begin, end)
+func (s* GoSortObject) IntroSort(low, high int){
+  efficientsort.IntroSort(s.values, s.comparator, low, high-1)
 }
 
 // Call HeapSort from EfficientSort package

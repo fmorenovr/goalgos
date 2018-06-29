@@ -3,6 +3,10 @@
 Golang implementation of sorting algothims.  
 You can see an extended doc in [godocs](https://godoc.org/github.com/Jenazads/golgos/sort).
 
+* Install it with:
+
+    go get github.com/jenazads/goalgs/sort
+
 ## Sorting Algorithms
 
 In this section I introduce Sorting Algorithms
