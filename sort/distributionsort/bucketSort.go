@@ -10,8 +10,7 @@ import(
 // Bucket Sort
 func BucketSort(arr []interface{}, comp goutils.TypeComparator, op goutils.TypeOperator, low, high int) () {
   bucketSize:=sortfunctions.HighestPowerofTwoLessThan(int(math.Sqrt(float64(high-low))))
-  maxValueIndex, minValueIndex := sortfunctions.FindMaxMinElementIndex(arr, comp, low, high)
-  minValue, maxValue := arr[minValueIndex], arr[maxValueIndex]
+  minValue, maxValue := sortfunctions.FindMaxMinElementIndex(arr, comp, low, high)
   numOfBuckets := goutils.ToInt(op(op(op(maxValue, minValue, "-"),bucketSize, "/"), 1, "+"));
   buckets := make([][]interface{}, numOfBuckets)
 

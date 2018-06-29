@@ -8,8 +8,7 @@ import(
 
 // PigeonHole Sort
 func PigeonHoleSort(arr []interface{}, comp goutils.TypeComparator, op goutils.TypeOperator, low, high int) () {
-  maxValueIndex, minValueIndex := sortfunctions.FindMaxMinElementIndex(arr, comp, low, high)
-  minValue, maxValue := arr[minValueIndex], arr[maxValueIndex]
+  minValue, maxValue := sortfunctions.FindMaxMinElementIndex(arr, comp, low, high)
   numOfHoles := goutils.ToInt(op(op(maxValue, minValue, "-"), 1, "+"));
   holes := make([][]interface{}, numOfHoles)
   

@@ -10,7 +10,7 @@ func SelectionSort(arr []interface{}, comp goutils.TypeComparator, low, high int
   if low == high {
     return
   }
-  k := sortfunctions.MinIndex(arr, comp, low, high-1);
+  k := sortfunctions.GetMinIndex(arr, comp, low, high-1);
   if k != low {
     arr[low], arr[k] = arr[k], arr[low]
   }

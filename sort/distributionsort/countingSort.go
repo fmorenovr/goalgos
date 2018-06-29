@@ -8,8 +8,7 @@ import(
 
 // Counting Sort or Histogram Sort
 func CountingSort(arr []interface{}, comp goutils.TypeComparator, op goutils.TypeOperator, low, high int) () {
-  maxValueIndex, minValueIndex := sortfunctions.FindMaxMinElementIndex(arr, comp, low, high)
-  minValue, maxValue := arr[minValueIndex], arr[maxValueIndex]
+  minValue, maxValue := sortfunctions.FindMaxMinElementIndex(arr, comp, low, high)
   numOfCounts := goutils.ToInt(op(op(maxValue, minValue, "-"), 1, "+"));
   counts := make([]int, numOfCounts)
   

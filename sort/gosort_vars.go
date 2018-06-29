@@ -126,7 +126,13 @@ func (s* GoSortObject) CycleSort(low, high int){
 // Call CircleSort from SwapSort package
 // Run as CircleSort(begin, end)
 func (s* GoSortObject) CircleSort(low, high int){
-  swapsort.CircleSort(s.values, s.comparator, low, high-1)
+  swapsort.CircleSort(s.values, s.comparator, low, high)
+}
+
+// Call PermutationSort from SwapSort package
+// Run as PermutationSort(begin, end)
+func (s* GoSortObject) PermutationSort(low, high int){
+  swapsort.PermutationSort(s.values, s.comparator, low, high)
 }
 
 /**********************
@@ -189,14 +195,14 @@ func (s* GoSortObject) BogoSort(low, high int){
 *                     *
 **********************/
 
-// Call SleepSort from ParallelSort package
-// Run as SleepSort(begin, end)
-func (s* GoSortObject) SleepSort(low, high int){
-  parallelsort.SleepSort(s.values, s.comparator, low, high)
-}
-
 // Call BrickSort from ParallelSort package
 // Run as BrickSort(begin, end)
 func (s* GoSortObject) BrickSort(low, high int){
   parallelsort.BrickSort(s.values, s.comparator, low, high-1)
+}
+
+// Call SleepSort from ParallelSort package
+// Run as SleepSort(begin, end)
+func (s* GoSortObject) SleepSort(low, high int){
+  parallelsort.SleepSort(s.values, s.comparator, low, high)
 }

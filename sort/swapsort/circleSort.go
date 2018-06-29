@@ -6,11 +6,12 @@ import(
 
 // Circle Sort
 func CircleSort(arr []interface{}, comp goutils.TypeComparator, low, high int) () {
-  for circleSort(arr, comp, low, high) {
+  for circleSort(arr, comp, low, high-1) {
     // empty block
   }
 }
 
+// circle sort
 func circleSort(arr []interface{}, comp goutils.TypeComparator, low, high int) bool {
   swapped := false
   if low == high {

@@ -7,11 +7,9 @@ import(
 
 // Pancake Sort
 func PancakeSort(arr []interface{}, comp goutils.TypeComparator, low, high int) () {
-  for curr_size := high; curr_size > 1; curr_size-- {
-    index_max, _ := sortfunctions.FindMaxMinElementIndex(arr, comp, low, curr_size);
-    if index_max != curr_size-1 {
-      sortfunctions.Reverse(arr, low, index_max);
-      sortfunctions.Reverse(arr, low, curr_size-1);
-    }
+  for curr_index := high-1; curr_index > low; curr_index-- {
+    max_index := sortfunctions.GetMaxIndex(arr, comp, low, curr_index);
+    sortfunctions.Reverse(arr, low, max_index);
+    sortfunctions.Reverse(arr, low, curr_index);
   }
 }

@@ -14,13 +14,40 @@ func EvaluateMin(a, b interface{}, comp goutils.TypeComparator) interface{} {
   }
 }
 
+// Returns the max_min element in arr[0..size-1] 
+func FindMaxMinElementIndex(arr []interface{}, comp goutils.TypeComparator, low, high int) (interface{}, interface{}){
+  index_min, index_max := low, low
+  for i := low+1; i < high; i++ {
+    if comp(arr[i], arr[index_max]) == 1 {
+      index_max = i
+    }
+    if comp(arr[i], arr[index_min]) == -1{
+      index_min = i
+    }
+  }
+  return arr[index_min], arr[index_max];
+}
+
 // Return min index
-func MinIndex(arr []interface{}, comp goutils.TypeComparator, i, j int) int {
+func GetMinIndex(arr []interface{}, comp goutils.TypeComparator, i, j int) int {
   if i == j {
     return i
   }
-  k := MinIndex(arr, comp, i + 1, j)
+  k := GetMinIndex(arr, comp, i + 1, j)
   if comp(arr[i], arr[k]) == -1 {
+    return i
+  } else {
+    return k
+  }
+}
+
+// Return max index
+func GetMaxIndex(arr []interface{}, comp goutils.TypeComparator, i, j int) int {
+  if i == j {
+    return i
+  }
+  k := GetMaxIndex(arr, comp, i + 1, j)
+  if comp(arr[i], arr[k]) == 1 {
     return i
   } else {
     return k
@@ -47,24 +74,9 @@ func IsSorted(arr []interface{}, comp goutils.TypeComparator, low, high int) (bo
 
 // Reverses arr[low..high]
 func Reverse(arr []interface{}, low, high int){
-  for i:=low; i < high ; i++ {
+  for i:=low; i < high ; i, high = i+1, high-1 {
     arr[high], arr[i] = arr[i], arr[high]
-    high--;
   }
-}
-
-// Returns index of the maximum element in arr[0..size-1] 
-func FindMaxMinElementIndex(arr []interface{}, comp goutils.TypeComparator, low, high int) (int, int){
-  index_min, index_max := low, low
-  for i := low+1; i < high; i++ {
-    if comp(arr[i], arr[index_max]) == 1 {
-      index_max = i
-    }
-    if comp(arr[i], arr[index_min]) == -1{
-      index_min = i
-    }
-  }
-  return index_max, index_min;
 }
 
 // return True if is power of 2
