@@ -5,7 +5,7 @@ You can see an extended doc in [godocs](https://godoc.org/github.com/Jenazads/go
 
 * Install it with:
 
-      go get github.com/jenazads/goalgs/sort
+      go get github.com/jenazads/goalgos/sort
 
 ## Sorting Algorithms
 
