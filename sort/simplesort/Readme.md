@@ -15,8 +15,6 @@ In this section I introduce Sorting Algorithms
 | SelectionSort |    O(n²)   | O(n²) | O(n²) |
 | SlowSort      |    O(np)   | O(np) | O(n^(log(n)/2)) |
 | LibrarySort | O(n²) | O(nlog(n)) | O(n) |
-
-Falta
 | PatienceSort | O(nlog(n)) | O(nlog(n)) | O(n) |
 
 </center>

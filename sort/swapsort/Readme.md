@@ -15,6 +15,8 @@ In this section I introduce Sorting Algorithms
 | ShellSort | O(n²) | depends | O(nlog(n)) |
 | CombSort | O(n²) | O(n²) | O(nlog(n)) |
 | CycleSort | O(n²) | O(n²) | O(n²) |
+| CircleSort | O() | O() | O() |
+| PermutationSort | O() | O() | O() |
 
 </center>
 

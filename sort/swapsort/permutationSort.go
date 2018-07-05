@@ -1,34 +1,28 @@
 package swapsort
 
 import(
-  "fmt"
   "github.com/jenazads/goutils";
+  "github.com/jenazads/goalgos/sort/sortfunctions";
 )
 
 // Permutation Sort
 func PermutationSort(arr []interface{}, comp goutils.TypeComparator, low, high int) () {
-  for !permutationSort(arr, comp, low, high-1) {
-    fmt.Println(arr)
-    // empty block
+  if(low<high){
+    for !sortfunctions.IsSorted(arr, comp, low, high) {
+      Permute(arr, comp, low, high)
+    }
   }
 }
 
-// permutation sort
-func permutationSort(arr []interface{}, comp goutils.TypeComparator, low, high int) bool {
-  if high <= 0 {
-    for i := high - 1; (comp(arr[i], arr[i-1])==1 ||comp(arr[i], arr[i-1])==0) ; i-- {
-      if i == low+1 {
-        return true
-      }
+// Generate permutation in the array
+func Permute(arr []interface{}, comp goutils.TypeComparator, low, high int) {
+  for j:=low;j<high;j++ {
+    if comp(arr[j], arr[high-1]) == 1 {
+      arr[high-1], arr[j] = arr[j], arr[high-1]
     }
-    return false
+    Permute(arr, comp, low, high-1)
+    if comp(arr[j], arr[high-1]) == 1 {
+      arr[high-1], arr[j] = arr[j], arr[high-1]
+    }
   }
-  for i := low; i <= high; i++ {
-    arr[i], arr[high] = arr[high], arr[i]
-      if permutationSort(arr, comp, low, high - 1) {
-        return true
-      }
-    arr[i], arr[high] = arr[high], arr[i]
-  }
-  return false
 }

@@ -12,11 +12,10 @@ In this section I introduce Sorting Algorithms
 | --- | --- | --- | --- |
 | PancakeSort | O(n) | O(n) | O(n) |
 | BitonicSort | O(log²(n)) | O(log²(n)) | O(log²(n)) |
-| BogoSort | O(Inf) | O(n.n!) | O(n) |
+| BogoSort | O(n) | O(n.n!) | O(Inf) |
 | StoogeSort | O(n^(log(3)/log(1.5))) | O(n^(log(3)/log(1.5))) | O(n^(log(3)/log(1.5))) |
-
-Falta
-| BeadSort | O(Sum (ai)) | O(Sum (ai)) | O(n) |
+| BeadSort | O(n) | O(Sum (ai)) | O(Sum (ai)) |
 | SpaghettiSort | O(n) | O(n) | O(n) |
+| NetworkSort | O(log²(n)) | O(log²(n)) | O(log²(n)) |
 
 </center>

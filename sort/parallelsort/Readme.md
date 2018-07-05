@@ -10,11 +10,10 @@ In this section I introduce Sorting Algorithms
 
 | Algorithm | Worst Case | Average Case | Best case |
 | --- | --- | --- | --- |
-
-Falta
-| SampleSort | O(Sum (ai)) | O(Sum (ai)) | O(n) |
-| CubeSort | O(nlog(n)) | O(nlog(n)) | O(n) |
-| BrickSort | O(n²) | O(n²) | O(n) |
+| BrickSort | O(n) | O(n²) | O(n²) |
+| SleepSort | O(nt) | O(nt) | O(nt) |
+| SampleSort | O(n) | O(Sum (ai)) | O(Sum (ai)) |
+| CubeSort | O(n) | O(nlog(n)) | O(nlog(n)) |
 
 </center>
 

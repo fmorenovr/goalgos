@@ -6,19 +6,21 @@ import(
 
 // Heap Sort
 func HeapSort(arr []interface{}, comp goutils.TypeComparator, low, high int) () {
-  BuildMaxHeap(arr,comp,low,high);
-  // One by one extract an element from heap
-  for i:=high-1; i>=low; i-=1 {
-    arr[i], arr[low] = arr[low], arr[i]
-    // call max heapify on the reduced heap
-    MaxHeapify(arr, comp, low, i);
+  if(low<high){
+    BuildMaxHeap(arr,comp,low,high);
+    // One by one extract an element from heap
+    for i:=high-1; i>=low; i-- {
+      arr[i], arr[low] = arr[low], arr[i]
+      // call max heapify on the reduced heap
+      MaxHeapify(arr, comp, low, i);
+    }
   }
 }
 
 // Build Max heap (rearrange array)
 func BuildMaxHeap(arr []interface{}, comp goutils.TypeComparator, low, high int){
   size:=high-low
-  for i:=size/2-1; i>=low; i-=1 {
+  for i:=size/2-1; i>=low; i-- {
     MaxHeapify(arr, comp, i, high);
   }
 }
@@ -26,7 +28,7 @@ func BuildMaxHeap(arr []interface{}, comp goutils.TypeComparator, low, high int)
 // Build Min heap (rearrange array)
 func BuildMinHeap(arr []interface{}, comp goutils.TypeComparator, low, high int){
   size:=high-low
-  for i:=size/2-1; i>=low; i-=1 {
+  for i:=size/2-1; i>=low; i-- {
     MinHeapify(arr, comp, i, high);
   }
 }

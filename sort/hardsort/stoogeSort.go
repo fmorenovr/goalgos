@@ -6,9 +6,7 @@ import(
 
 // Stooge Sort
 func StoogeSort(arr []interface{}, comp goutils.TypeComparator, low, high int) () {
-  if low >= high {
-    return;
-  } else if low < high{
+  if low < high{
     // If first element is smaller than last, swap them
     if comp(arr[low], arr[high]) == 1 {
       arr[high], arr[low] = arr[low], arr[high]

@@ -6,13 +6,15 @@ import(
 
 // Circle Sort
 func CircleSort(arr []interface{}, comp goutils.TypeComparator, low, high int) () {
-  for circleSort(arr, comp, low, high-1) {
-    // empty block
+  if low < high {
+    for CircularPermute(arr, comp, low, high-1) {
+      // empty block
+    }
   }
 }
 
-// circle sort
-func circleSort(arr []interface{}, comp goutils.TypeComparator, low, high int) bool {
+// Generate circular permutation in the array
+func CircularPermute(arr []interface{}, comp goutils.TypeComparator, low, high int) bool {
   swapped := false
   if low == high {
     return false
@@ -33,7 +35,7 @@ func circleSort(arr []interface{}, comp goutils.TypeComparator, low, high int) b
     }
   }
   mid   := (high - low) / 2
-  right := circleSort(arr, comp, low, low+mid)
-  left  := circleSort(arr, comp, low+mid+1, high)
+  right := CircularPermute(arr, comp, low, low+mid)
+  left  := CircularPermute(arr, comp, low+mid+1, high)
   return swapped || right || left
 }

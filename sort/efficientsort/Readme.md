@@ -11,17 +11,15 @@ In this section I introduce Sorting Algorithms
 | Algorithm | Worst Case | Average Case | Best case |
 | --- | --- | --- | --- |
 | MergeSort | O(nlog(n)) | O(nlog(n)) | O(nlog(n)) |
-| QuickSort | O(n²) | O(nlog(n)) | O(nlog(n)) |
+| QuickSort | O(nlog(n)) | O(nlog(n)) | O(n²) |
 | HeapSort | O(nlog(n)) | O(nlog(n)) | O(nlog(n)) |
-| TimSort | O(nlog(n)) | O(nlog(n)) | O(n) |
-| TreeSort | O(n²) | O(nlog(n)) | O(nlog(n)) |
-
-Falta
+| TimSort | O(n) | O(nlog(n)) | O(nlog(n)) |
+| TreeSort | O(n) | O(nlog(n)) | O(nlog(n)) |
 | IntroSort | O(nlog(n)) | O(nlog(n)) | O(nlog(n)) |
 | TournamentSort | O(nlog(n)) | O(nlog(n)) | O(nlog(n)) |
-| SmoothSort | O(nlog(n)) | O(nlog(n)) | O(n) |
-| BlockSort | O(nlog(n)) | O(nlog(n)) | O(n) |
-| StrandSort | O(n²) | O(n²) | O(n) |
+| SmoothSort | O(n) | O(nlog(n)) | O(nlog(n)) |
+| BlockSort | O(n) | O(nlog(n)) | O(nlog(n)) |
+| StrandSort | O(n) | O(n²) | O(n²) |
 
 </center>
 

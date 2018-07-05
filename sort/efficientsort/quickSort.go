@@ -6,7 +6,7 @@ import(
 
 // Quick Sort
 func QuickSort(arr []interface{}, comp goutils.TypeComparator, low, high int) () {
-  if low < high {     
+  if low < high {
     partition := QuickPartition(arr, comp, low, high); 
     QuickSort(arr, comp, low, partition - 1); 
     QuickSort(arr, comp, partition + 1, high);

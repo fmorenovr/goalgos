@@ -7,16 +7,18 @@ import(
 // Bitonic Sort
 // high-low must be power of 2
 func BitonicSort(arr []interface{}, comp goutils.TypeComparator, low, high int, order bool) () {
-  // order == true increase
-  // order == false decrease
-  if high>1 {
-    mid := high/2;
-    // sort in ascending order since order here is true
-    BitonicSort(arr, comp, low, mid, true);
-    // sort in descending order since order here is false
-    BitonicSort(arr, comp, low+mid, mid, false);
-    // Will merge wole sequence in ascending order since order.
-    BitonicMerge(arr, comp, low, high, order);
+  if low < high {
+    // order == true increase
+    // order == false decrease
+    if high>1 {
+      mid := high/2;
+      // sort in ascending order since order here is true
+      BitonicSort(arr, comp, low, mid, true);
+      // sort in descending order since order here is false
+      BitonicSort(arr, comp, low+mid, mid, false);
+      // Will merge wole sequence in ascending order since order.
+      BitonicMerge(arr, comp, low, high, order);
+    }
   }
 }
 

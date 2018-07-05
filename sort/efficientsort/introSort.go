@@ -7,14 +7,15 @@ import(
 
 // Intro Sort
 func IntroSort(arr []interface{}, comp goutils.TypeComparator, low, high int) () {
-  maxDepth:=int(math.Floor(math.Log2(float64(high-low))))*2
-  introSort(arr, comp, maxDepth, low, high)
+  if(low<high){
+    maxDepth:=int(math.Floor(math.Log2(float64(high-low))))*2
+    introSort(arr, comp, maxDepth, low, high)
+  }
 }
 
 // introSort
 func introSort(arr []interface{}, comp goutils.TypeComparator, maxDepth, low, high int) () {
-  size:=high-low
-  if size <= 1 {
+  if high<low+1 {
     return
   } else if maxDepth == 0{
     HeapSort(arr, comp, low, high)
