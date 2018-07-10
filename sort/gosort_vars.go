@@ -21,6 +21,12 @@ func (s* GoSortObject) SlowSort(low, high int){
   simplesort.SlowSort(s.values, s.comparator, low, high-1)
 }
 
+// Call SillySort from SimpleSort package
+// Run as SillySort(begin, end)
+func (s* GoSortObject) SillySort(low, high int){
+  simplesort.SillySort(s.values, s.comparator, low, high-1)
+}
+
 // Call GnomeSort from SimpleSort package
 // Run as GnomeSort(begin, end)
 func (s* GoSortObject) GnomeSort(low, high int){

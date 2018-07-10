@@ -62,6 +62,19 @@ func Shuffle(arr []interface{}, low, high int){
   }
 }
 
+// Generate permutation in the array
+func Permute(arr []interface{}, comp goutils.TypeComparator, low, high int) {
+  for j:=low;j<high;j++ {
+    if comp(arr[j], arr[high-1]) == 1 {
+      arr[high-1], arr[j] = arr[j], arr[high-1]
+    }
+    Permute(arr, comp, low, high-1)
+    if comp(arr[j], arr[high-1]) == 1 {
+      arr[high-1], arr[j] = arr[j], arr[high-1]
+    }
+  }
+}
+
 // verify is Sorted
 func IsSorted(arr []interface{}, comp goutils.TypeComparator, low, high int) (bool){
   for i:=low; i<high-1; i++ {

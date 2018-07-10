@@ -8,8 +8,8 @@ import(
 
 func main() {
   
-  begin:=10
-  end:=30
+  begin:=25
+  end:=34
 
   strings := []interface{}{"d", "a", "b", "c"}                  // []
   sortObject,_:=gosort.NewGoSortObject(strings, goutils.StringComparator)
@@ -48,6 +48,14 @@ func main() {
   sortObject,_=gosort.NewGoSortObject(arr, goutils.IntComparator)
   fmt.Println("SelectionSort")
   sortObject.SelectionSort(begin,sortObject.Len()-end)
+  fmt.Println("Is Ordered ? ", arr)
+  fmt.Println("Is Ordered ? ", sortObject.IsSorted(), "\n\n")
+  
+  arr = []interface{}{10, 6, 8, 8, 3, 2, 7, 4,8, 8, 3, 2, 7, 4, 6, 8, 8, 3, 2, 7, 4,9, 11, 10, 9, 6, 10, 3, 5, 8, 8, 3, 2, 7, 4,8, 8, 3, 2, 7, 4, 6, 8, 8, 3, 2, 7, 4,9, 11, 10, 9, 6, 8, 8, 3, 5, 5, 7, 8, 15, 49, 65, 2}
+  
+  sortObject,_=gosort.NewGoSortObject(arr, goutils.IntComparator)
+  fmt.Println("SillySort")
+  sortObject.SillySort(begin,sortObject.Len()-end)
   fmt.Println("Is Ordered ? ", arr)
   fmt.Println("Is Ordered ? ", sortObject.IsSorted(), "\n\n")
   
@@ -207,7 +215,15 @@ func main() {
   
   sortObject,_=gosort.NewGoSortObjectOp(arr, goutils.IntComparator, goutils.IntOperator)
   fmt.Println("BogoSort")
-  sortObject.BogoSort(28,sortObject.Len()-28)
+  sortObject.BogoSort(begin,sortObject.Len()-end)
+  fmt.Println("Is Ordered ? ", arr)
+  fmt.Println("Is Ordered ? ", sortObject.IsSorted(), "\n\n")
+  
+  arr = []interface{}{10, 6, 8, 8, 3, 2, 7, 4,8, 8, 3, 2, 7, 4, 6, 8, 8, 3, 2, 7, 4,9, 11, 10, 9, 6, 10, 3, 5, 8, 8, 3, 2, 7, 4, 8, 8, 3, 2, 7, 4, 6, 8, 8, 3, 2, 7, 4,9, 11, 10, 9, 6, 8, 8, 3, 5, 5, 7, 8, 15, 49, 65, 2}
+  
+  sortObject,_=gosort.NewGoSortObjectOp(arr, goutils.IntComparator, goutils.IntOperator)
+  fmt.Println("PermutationSort")
+  sortObject.PermutationSort(begin,sortObject.Len()-end)
   fmt.Println("Is Ordered ? ", arr)
   fmt.Println("Is Ordered ? ", sortObject.IsSorted(), "\n\n")
 }
