@@ -9,7 +9,7 @@ import(
 func BogoSort(arr []interface{}, comp goutils.TypeComparator, low, high int) () {
   if low < high {
     for !sortfunctions.IsSorted(arr, comp, low, high) {
-      sortfunctions.Shuffle(arr, low, high);
+      sortfunctions.Shuffle(arr, comp, low, high);
     }
   }
 }

@@ -55,10 +55,12 @@ func GetMaxIndex(arr []interface{}, comp goutils.TypeComparator, i, j int) int {
 }
 
 // Generate random permutation in the array
-func Shuffle(arr []interface{}, low, high int){
+func Shuffle(arr []interface{}, comp goutils.TypeComparator, low, high int){
   for i:=low; i<high; i++ {
     rand_index := rand.Intn(high-low)+low
-    arr[rand_index], arr[i] = arr[i], arr[rand_index]
+    if comp(arr[i], arr[rand_index]) == 1 {
+      arr[rand_index], arr[i] = arr[i], arr[rand_index]
+    }
   }
 }
 
