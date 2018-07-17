@@ -17,43 +17,43 @@ import(
 
 // Call SlowSort from SimpleSort package
 // Run as SlowSort(begin, end)
-func (s* GoSortObject) SlowSort(low, high int){
+func (s* GoSort) SlowSort(low, high int){
   simplesort.SlowSort(s.values, s.comparator, low, high-1)
 }
 
 // Call SillySort from SimpleSort package
 // Run as SillySort(begin, end)
-func (s* GoSortObject) SillySort(low, high int){
+func (s* GoSort) SillySort(low, high int){
   simplesort.SillySort(s.values, s.comparator, low, high-1)
 }
 
 // Call GnomeSort from SimpleSort package
 // Run as GnomeSort(begin, end)
-func (s* GoSortObject) GnomeSort(low, high int){
+func (s* GoSort) GnomeSort(low, high int){
   simplesort.GnomeSort(s.values, s.comparator, low, high)
 }
 
 // Call InsertionSort from SimpleSort package
 // Run as InsertionSort(begin, end)
-func (s* GoSortObject) InsertionSort(low, high int){
+func (s* GoSort) InsertionSort(low, high int){
   simplesort.InsertionSort(s.values, s.comparator, low, high)
 }
 
 // Call SelectionSort from SimpleSort package
 // Run as SelectionSort(begin, end)
-func (s* GoSortObject) SelectionSort(low, high int){
+func (s* GoSort) SelectionSort(low, high int){
   simplesort.SelectionSort(s.values, s.comparator, low, high)
 }
 
 // Call LibrarySort from SimpleSort package
 // Run as LibrarySort(begin, end)
-func (s* GoSortObject) LibrarySort(low, high int){
+func (s* GoSort) LibrarySort(low, high int){
   simplesort.LibrarySort(s.values, s.comparator, low, high)
 }
 
 // Call PatienceSort from SimpleSort package
 // Run as PatienceSort(begin, end)
-func (s* GoSortObject) PatienceSort(low, high int){
+func (s* GoSort) PatienceSort(low, high int){
   simplesort.PatienceSort(s.values, s.comparator, low, high)
 }
 
@@ -65,31 +65,31 @@ func (s* GoSortObject) PatienceSort(low, high int){
 
 // Call QuickSort from EfficientSort package
 // Run as QuickSort(begin, end)
-func (s* GoSortObject) QuickSort(low, high int){
+func (s* GoSort) QuickSort(low, high int){
   efficientsort.QuickSort(s.values, s.comparator, low, high-1)
 }
 
 // Call MergeSort from EfficientSort package
 // Run as MergeSort(begin, end)
-func (s* GoSortObject) MergeSort(low, high int){
+func (s* GoSort) MergeSort(low, high int){
   efficientsort.MergeSort(s.values, s.comparator, low, high-1)
 }
 
 // Call IntroSort from EfficientSort package
 // Run as IntroSort(begin, end)
-func (s* GoSortObject) IntroSort(low, high int){
+func (s* GoSort) IntroSort(low, high int){
   efficientsort.IntroSort(s.values, s.comparator, low, high-1)
 }
 
 // Call HeapSort from EfficientSort package
 // Run as HeapSort(begin, end)
-func (s* GoSortObject) HeapSort(low, high int){
+func (s* GoSort) HeapSort(low, high int){
   efficientsort.HeapSort(s.values, s.comparator, low, high)
 }
 
 // Call TimSort from EfficientSort package
 // Run as TimSort(begin, end)
-func (s* GoSortObject) TimSort(low, high int){
+func (s* GoSort) TimSort(low, high int){
   efficientsort.TimSort(s.values, s.comparator, low, high)
 }
 
@@ -101,43 +101,43 @@ func (s* GoSortObject) TimSort(low, high int){
 
 // Call BubbleSort from SwapSort package
 // Run as BubbleSort(begin, end)
-func (s* GoSortObject) BubbleSort(low, high int){
+func (s* GoSort) BubbleSort(low, high int){
   swapsort.BubbleSort(s.values, s.comparator, low, high)
 }
 
 // Call CockTailSort from SwapSort package
 // Run as CockTailSort(begin, end)
-func (s* GoSortObject) CockTailSort(low, high int){
+func (s* GoSort) CockTailSort(low, high int){
   swapsort.CockTailSort(s.values, s.comparator, low, high)
 }
 
 // Call ShellSort from SwapSort package
 // Run as ShellSort(begin, end)
-func (s* GoSortObject) ShellSort(low, high int){
+func (s* GoSort) ShellSort(low, high int){
   swapsort.ShellSort(s.values, s.comparator, low, high)
 }
 
 // Call CombSort from SwapSort package
 // Run as CombSort(begin, end)
-func (s* GoSortObject) CombSort(low, high int){
+func (s* GoSort) CombSort(low, high int){
   swapsort.CombSort(s.values, s.comparator, low, high)
 }
 
 // Call CycleSort from SwapSort package
 // Run as CycleSort(begin, end)
-func (s* GoSortObject) CycleSort(low, high int){
+func (s* GoSort) CycleSort(low, high int){
   swapsort.CycleSort(s.values, s.comparator, low, high)
 }
 
 // Call CircleSort from SwapSort package
 // Run as CircleSort(begin, end)
-func (s* GoSortObject) CircleSort(low, high int){
+func (s* GoSort) CircleSort(low, high int){
   swapsort.CircleSort(s.values, s.comparator, low, high)
 }
 
 // Call PermutationSort from SwapSort package
 // Run as PermutationSort(begin, end)
-func (s* GoSortObject) PermutationSort(low, high int){
+func (s* GoSort) PermutationSort(low, high int){
   swapsort.PermutationSort(s.values, s.comparator, low, high)
 }
 
@@ -149,19 +149,19 @@ func (s* GoSortObject) PermutationSort(low, high int){
 
 // Call BucketSort from DistributionSort package
 // Run as BucketSort(begin, end)
-func (s* GoSortObject) BucketSort(low, high int){
+func (s* GoSort) BucketSort(low, high int){
   distributionsort.BucketSort(s.values, s.comparator, s.operator, low, high)
 }
 
 // Call PigeonHoleSort from DistributionSort package
 // Run as PigeonHoleSort(begin, end)
-func (s* GoSortObject) PigeonHoleSort(low, high int){
+func (s* GoSort) PigeonHoleSort(low, high int){
   distributionsort.PigeonHoleSort(s.values, s.comparator, s.operator, low, high)
 }
 
 // Call CountingSort from DistributionSort package
 // Run as CountingSort(begin, end)
-func (s* GoSortObject) CountingSort(low, high int){
+func (s* GoSort) CountingSort(low, high int){
   distributionsort.CountingSort(s.values, s.comparator, s.operator, low, high)
 }
 
@@ -173,25 +173,25 @@ func (s* GoSortObject) CountingSort(low, high int){
 
 // Call StoogeSort from HardSort package
 // Run as StoogeSort(begin, end)
-func (s* GoSortObject) StoogeSort(low, high int){
+func (s* GoSort) StoogeSort(low, high int){
   hardsort.StoogeSort(s.values, s.comparator, low, high-1)
 }
 
 // Call PancakeSort from HardSort package
 // Run as PancakeSort(begin, end)
-func (s* GoSortObject) PancakeSort(low, high int){
+func (s* GoSort) PancakeSort(low, high int){
   hardsort.PancakeSort(s.values, s.comparator, low, high)
 }
 
 // Call BitonicSort from HardSort package
 // Run as BitonicSort(begin, end), (end-high) must be a power of 2.
-func (s* GoSortObject) BitonicSort(low, high int){
+func (s* GoSort) BitonicSort(low, high int){
   hardsort.BitonicSort(s.values, s.comparator, low, high, true)
 }
 
 // Call PancakeSort from HardSort package
 // Run as PancakeSort(begin, end)
-func (s* GoSortObject) BogoSort(low, high int){
+func (s* GoSort) BogoSort(low, high int){
   hardsort.BogoSort(s.values, s.comparator, low, high)
 }
 
@@ -203,12 +203,12 @@ func (s* GoSortObject) BogoSort(low, high int){
 
 // Call BrickSort from ParallelSort package
 // Run as BrickSort(begin, end)
-func (s* GoSortObject) BrickSort(low, high int){
+func (s* GoSort) BrickSort(low, high int){
   parallelsort.BrickSort(s.values, s.comparator, low, high-1)
 }
 
 // Call SleepSort from ParallelSort package
 // Run as SleepSort(begin, end)
-func (s* GoSortObject) SleepSort(low, high int){
+func (s* GoSort) SleepSort(low, high int){
   parallelsort.SleepSort(s.values, s.comparator, low, high)
 }

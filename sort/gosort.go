@@ -5,40 +5,40 @@ import(
   "github.com/jenazads/goutils"
 )
 
-type GoSortObject struct {
+type GoSort struct {
   values     []interface{}
   comparator goutils.TypeComparator
-  operator goutils.TypeOperator
+  operator   goutils.TypeOperator
 }
 
-// new GoSort Object
-func NewGoSortObject(arr []interface{}, comp goutils.TypeComparator) (*GoSortObject, error){
+// new GoSort 
+func NewGoSort(arr []interface{}, comp goutils.TypeComparator) (*GoSort, error){
   if arr == nil {
     return nil, GoSortEmptyArray
   }
-  return &GoSortObject{
+  return &GoSort{
     values: arr,
     comparator: comp,
     operator: nil}, nil
 }
 
-func NewGoSortObjectOp(arr []interface{}, comp goutils.TypeComparator, op goutils.TypeOperator) (*GoSortObject, error){
+func NewGoSortOp(arr []interface{}, comp goutils.TypeComparator, op goutils.TypeOperator) (*GoSort, error){
   if arr == nil {
     return nil, GoSortEmptyArray
   }
-  return &GoSortObject{
+  return &GoSort{
     values: arr,
     comparator: comp,
     operator: op}, nil
 }
 
 // Sort sorts values (in-place) with respect to the given comparator.
-func (s *GoSortObject) GoSort() {
+func (s *GoSort) GoSort() {
   sort.Sort(s)
 }
 
 // return True if is sorted
-func (s *GoSortObject) IsSorted() bool {
+func (s *GoSort) IsSorted() bool {
 	n := s.Len()
 	for i := n - 1; i > 0; i-- {
 		if s.Less(i, i-1) {
@@ -49,13 +49,13 @@ func (s *GoSortObject) IsSorted() bool {
 }
 
 // return sub array
-func (s *GoSortObject) SubArray(low, high int) (*GoSortObject) {
-  gosortObject, _ := NewGoSortObjectOp(s.values[low:high], s.comparator, s.operator)
-  return gosortObject
+func (s *GoSort) SubArray(low, high int) (*GoSort) {
+  gosortObj, _ := NewGoSortOp(s.values[low:high], s.comparator, s.operator)
+  return gosortObj
 }
 
 // return True if is sorted in this part
-func (s *GoSortObject) IsSortedPart(begin, end int) bool {
+func (s *GoSort) IsSortedPart(begin, end int) bool {
 	for i := end - 1; i > begin; i-- {
 		if s.Less(i, i-1) {
 			return false
@@ -65,47 +65,47 @@ func (s *GoSortObject) IsSortedPart(begin, end int) bool {
 }
 
 // return the len of array
-func (s *GoSortObject) Len() int {
+func (s *GoSort) Len() int {
   return len(s.values)
 }
 
 // swap elements
-func (s *GoSortObject) Swap(i, j int) {
+func (s *GoSort) Swap(i, j int) {
   s.values[i], s.values[j] = s.values[j], s.values[i]
 }
 
 // return if is less
-func (s *GoSortObject) Less(i, j int) bool {
+func (s *GoSort) Less(i, j int) bool {
   return s.comparator(s.values[i], s.values[j]) == -1
 }
 
 // return if is less
-func (s *GoSortObject) LessThan(i, j int) bool {
+func (s *GoSort) LessThan(i, j int) bool {
   return s.comparator(s.values[i], s.values[j]) == -1
 }
 
 // return if is greater
-func (s *GoSortObject) GreaterThan(i, j int) bool {
+func (s *GoSort) GreaterThan(i, j int) bool {
   return s.comparator(s.values[i], s.values[j]) == 1
 }
 
 // return if is equals
-func (s *GoSortObject) EqualsThan(i, j int) bool {
+func (s *GoSort) EqualsThan(i, j int) bool {
   return s.comparator(s.values[i], s.values[j]) == 0
 }
 
 // return if is less or equals
-func (s *GoSortObject) LessEqualsThan(i, j int) bool {
+func (s *GoSort) LessEqualsThan(i, j int) bool {
   return (s.comparator(s.values[i], s.values[j]) == -1 || s.comparator(s.values[i], s.values[j]) == 0)
 }
 
 // return if is greater or equals
-func (s *GoSortObject) GreaterEqualsThan(i, j int) bool {
+func (s *GoSort) GreaterEqualsThan(i, j int) bool {
   return (s.comparator(s.values[i], s.values[j]) == 1 || s.comparator(s.values[i], s.values[j]) == 0)
 }
 
 // find the min element and respective index
-func (s *GoSortObject) FindMinElementAndIndex() (interface{}, int) {
+func (s *GoSort) FindMinElementAndIndex() (interface{}, int) {
   var index = 0
   
   for i := 1; i < s.Len(); i++ {
@@ -117,7 +117,7 @@ func (s *GoSortObject) FindMinElementAndIndex() (interface{}, int) {
 }
 
 // find the max element and respective index
-func (s *GoSortObject) FindMaxElementAndIndex() (interface{},int) {
+func (s *GoSort) FindMaxElementAndIndex() (interface{},int) {
   var index = 0
   
   for i := 1; i < s.Len(); i++ {

@@ -20,7 +20,7 @@ func HeapSort(arr []interface{}, comp goutils.TypeComparator, low, high int) () 
 // Build Max heap (rearrange array)
 func BuildMaxHeap(arr []interface{}, comp goutils.TypeComparator, low, high int){
   size:=high-low
-  for i:=size/2-1; i>=low; i-- {
+  for i:=low+size/2; i>=low; i-- {
     MaxHeapify(arr, comp, i, high);
   }
 }
@@ -28,7 +28,7 @@ func BuildMaxHeap(arr []interface{}, comp goutils.TypeComparator, low, high int)
 // Build Min heap (rearrange array)
 func BuildMinHeap(arr []interface{}, comp goutils.TypeComparator, low, high int){
   size:=high-low
-  for i:=size/2-1; i>=low; i-- {
+  for i:=low+size/2; i>=low; i-- {
     MinHeapify(arr, comp, i, high);
   }
 }
@@ -43,7 +43,7 @@ func MaxHeapify(arr []interface{}, comp goutils.TypeComparator, low, high int){
   if left < high && comp(arr[left], arr[largest]) == 1 {
     largest = left;
   }
-  // If right child is larger than largest so far
+  // If right child is larger  than root
   if right < high && comp(arr[right], arr[largest]) == 1 {
     largest = right;
   }
@@ -61,11 +61,11 @@ func MinHeapify(arr []interface{}, comp goutils.TypeComparator, low, high int){
   left := 2*low + 1
   right := 2*low + 2
 
-  // If left child is larger than root
+  // If left child is smaller than root
   if left < high && comp(arr[left], arr[smallest]) == -1 {
     smallest = left;
   }
-  // If right child is larger than largest so far
+  // If right child is smaller than root
   if right < high && comp(arr[right], arr[smallest]) == -1 {
     smallest = right;
   }
