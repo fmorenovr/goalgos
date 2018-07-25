@@ -1,12 +1,12 @@
 package gosort_test
 
 import(
-  "github.com/jenazads/goalgos/sort";
-  "github.com/jenazads/goutils";
   "fmt";
+  "github.com/jenazads/goutils";
+  "github.com/jenazads/goalgos/sort";
 )
 
-func main() {
+func Example_Sort() {
   
   begin:=24
   end:=34
