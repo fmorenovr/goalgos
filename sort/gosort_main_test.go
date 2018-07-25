@@ -6,7 +6,7 @@ import(
   "github.com/jenazads/goalgos/sort";
 )
 
-func Example_Sort() {
+func Example_sort() {
   
   begin:=24
   end:=34
