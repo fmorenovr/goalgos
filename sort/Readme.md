@@ -76,6 +76,7 @@ In this section I introduce Sorting Algorithms
 | Algorithm | Best Case | Average Case | Worst case |
 | --- | --- | --- | --- |
 | BucketSort | O(n+k) | O(n+k) | O(n²) |
+| ShuffleSort | O(n+k) | O(n+k) | O(n²) |
 | CountingSort | O(n+k) | O(n+k) | O(n+k) |
 | PigeonHoleSort | O(n+k) | O(n+k) | O(n+k) |
 | RadixSort | O(n.k) | O(n.k) | O(nk) |

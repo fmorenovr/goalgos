@@ -159,6 +159,12 @@ func (s* GoSort) BucketSort(low, high int){
   distributionsort.BucketSort(s.values, s.comparator, s.operator, low, high)
 }
 
+// Call BucketSort from DistributionSort package
+// Run as BucketSort(begin, end)
+func (s* GoSort) ShuffleSort(low, high int){
+  distributionsort.ShuffleSort(s.values, s.comparator, s.operator, low, high)
+}
+
 // Call PigeonHoleSort from DistributionSort package
 // Run as PigeonHoleSort(begin, end)
 func (s* GoSort) PigeonHoleSort(low, high int){
