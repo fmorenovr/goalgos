@@ -14,7 +14,7 @@ In this section I introduce Sorting Algorithms
 
 <center>
 
-| Algorithm | Worst Case | Average Case | Best case |
+| Algorithm | Best Case | Average Case | Worst case |
 | --- | --- | --- | --- |
 | BucketSort | O(n+k) | O(n+k) | O(n²) |
 | ShuffleSort | O(n+k) | O(n+k) | O(n²) |
@@ -23,7 +23,7 @@ In this section I introduce Sorting Algorithms
 | RadixSort | O(n.k) | O(n.k) | O(nk) |
 | SpreadSort | O(n) | O(n.k/d) | O(n.(k/s+d)) |
 | BurstSort | O(n) | O(n.k/d) | O(n.k/d) |
-| FlashSort | O(n) | O(n.+r) | O(n²) |
+| FlashSort | O(n) | O(n+r) | O(n²) |
 | PostmanSort | O(n) | O(n.k/d) | O(n.k/d) |
 | ProxmapSort | O(n) | O(n) | O(n²) |
 

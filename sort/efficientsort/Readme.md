@@ -8,7 +8,7 @@ In this section I introduce Sorting Algorithms
 
 <center>
 
-| Algorithm | Worst Case | Average Case | Best case |
+| Algorithm | Best Case | Average Case | Worst case |
 | --- | --- | --- | --- |
 | MergeSort | O(nlog(n)) | O(nlog(n)) | O(nlog(n)) |
 | QuickSort | O(nlog(n)) | O(nlog(n)) | O(n²) |

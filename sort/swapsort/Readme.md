@@ -8,12 +8,12 @@ In this section I introduce Sorting Algorithms
 
 <center>
 
-| Algorithm | Worst Case | Average Case | Best case |
+| Algorithm | Best Case | Average Case | Worst case |
 | --- | --- | --- | --- |
-| BubbleSort | O(n²) | O(n²) | O(n) |
-| CockTailSort | O(n²) | O(n²) | O(n) |
-| ShellSort | O(n²) | depends | O(nlog(n)) |
-| CombSort | O(n²) | O(n²) | O(nlog(n)) |
+| BubbleSort | O(n) | O(n²) | O(n²) |
+| CockTailSort | O(n) | O(n²) | O(n²) |
+| ShellSort | O(n) | O(n(log(n))²) | O((nlog(n))²) |
+| CombSort | O(nlog(n)) | O(n²) | O(n²) |
 | CycleSort | O(n²) | O(n²) | O(n²) |
 | CircleSort | O() | O() | O() |
 | PermutationSort | O() | O() | O() |

@@ -44,7 +44,7 @@ func (s* GoSort) InsertionSort(low, high int){
 func (s* GoSort) SelectionSort(low, high int){
   simplesort.SelectionSort(s.values, s.comparator, low, high)
 }
-
+/*
 // Call LibrarySort from SimpleSort package
 // Run as LibrarySort(begin, end)
 func (s* GoSort) LibrarySort(low, high int){
@@ -56,7 +56,7 @@ func (s* GoSort) LibrarySort(low, high int){
 func (s* GoSort) PatienceSort(low, high int){
   simplesort.PatienceSort(s.values, s.comparator, low, high)
 }
-
+*/
 /**********************
 *                     *
 *   Efficient Sort    *
