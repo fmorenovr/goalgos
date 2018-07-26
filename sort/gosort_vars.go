@@ -93,6 +93,12 @@ func (s* GoSort) TimSort(low, high int){
   efficientsort.TimSort(s.values, s.comparator, low, high)
 }
 
+// Call TreeSort from EfficientSort package
+// Run as TreeSort(begin, end)
+func (s* GoSort) TreeSort(low, high int, f func(interface{})(interface{})){
+  efficientsort.TreeSort(s.values, s.comparator, s.operator, f, low, high)
+}
+
 /**********************
 *                     *
 *      Swap Sort      *

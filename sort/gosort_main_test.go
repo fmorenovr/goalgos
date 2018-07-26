@@ -1,27 +1,19 @@
 package gosort_test
 
 import(
-  "fmt";
-  "github.com/jenazads/goutils";
   "github.com/jenazads/goalgos/sort";
+  "github.com/jenazads/goutils";
+  "fmt";
 )
 
-func Example_sort() {
+func Example_sortingAlgorithms() {
   
   begin:=24
   end:=34
 
-  strings := []interface{}{"d", "a", "b", "c"}                  // []
-  sortObject,_:=gosort.NewGoSort(strings, goutils.StringComparator)
-  fmt.Println("Is Ordered ? ",strings)
-  fmt.Println("Is Ordered ? ", sortObject.IsSortedPart(1,2))
-  sortObject.GoSort() // ["a","b","c","d"]
-  fmt.Println("Is Ordered ? ",strings)
-  fmt.Println("Is Ordered ? ", sortObject.IsSorted(), "\n\n")
-  
   arr := []interface{}{10, 6, 8, 8, 3, 2, 7, 4,8, 8, 3, 2, 7, 4, 6, 8, 8, 3, 2, 7, 4,9, 11, 10, 9, 6, 10, 3, 5, 8, 8, 3, 2, 7, 4,8, 8, 3, 2, 7, 4, 6, 8, 8, 3, 2, 7, 4,9, 11, 10, 9, 6, 8, 8, 3, 5, 5, 7, 8, 15, 49, 65, 2}
   
-  sortObject,_=gosort.NewGoSort(arr, goutils.IntComparator)
+  sortObject,_:=gosort.NewGoSort(arr, goutils.IntComparator)
   fmt.Println("GnomeSort")
   sortObject.GnomeSort(begin,sortObject.Len()-end)
   fmt.Println("Is Ordered ? ", arr)
@@ -88,6 +80,16 @@ func Example_sort() {
   sortObject,_=gosort.NewGoSort(arr, goutils.IntComparator)
   fmt.Println("TimSort")
   sortObject.TimSort(begin,sortObject.Len()-end)
+  fmt.Println("Is Ordered ? ", arr)
+  fmt.Println("Is Ordered ? ", sortObject.IsSorted(), "\n\n")
+  
+  arr = []interface{}{10, 6, 8, 8, 3, 2, 7, 4,8, 8, 3, 2, 7, 4, 6, 8, 8, 3, 2, 7, 4,9, 11, 10, 9, 6, 10, 3, 5, 8, 8, 3, 2, 7, 4,8, 8, 3, 2, 7, 4, 6, 8, 8, 3, 2, 7, 4,9, 11, 10, 9, 6, 8, 8, 3, 5, 5, 7, 8, 15, 49, 65, 2}
+  
+  sortObject,_=gosort.NewGoSortOp(arr, goutils.IntComparator, goutils.IntOperator)
+  fmt.Println("TreeSort")
+  sortObject.TreeSort(begin,sortObject.Len()-end, func(a interface{})(interface{}){
+    return a
+  })
   fmt.Println("Is Ordered ? ", arr)
   fmt.Println("Is Ordered ? ", sortObject.IsSorted(), "\n\n")
   
