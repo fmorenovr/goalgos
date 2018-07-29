@@ -5,6 +5,13 @@ import (
   "github.com/jenazads/goutils";
 )
 
+// Copy a elements (size) from array 1 to array 2
+func ArrayCopy(arrsrc []interface{}, lowsrc int, arrdest []interface{}, lowdest, size int)(){
+  for i:=0; i<size; i++ {
+    arrdest[lowdest+i] = arrsrc[lowsrc+i]
+  }
+}
+
 // return min between a, b
 func EvaluateMin(a, b interface{}, comp goutils.TypeComparator) interface{} {
   if comp(a ,b) == 1 {
@@ -95,8 +102,8 @@ func Reverse(arr []interface{}, low, high int){
 }
 
 // return True if is power of 2
-func IsPowerOfTwo(x int) (bool, uint){
-  var expo uint = 0
+func IsPowerOfTwo(x int) (bool, int){
+  expo := 0
   for ((x % 2) == 0) && (x > 1) {
     x /= 2
     expo++
@@ -109,7 +116,7 @@ func SetPowerOfTwo(x uint) int {
   return 2<<(x-1)
 }
 
-// return the highest number less than N
+// return the highest number less than N that is power of 2
 func HighestPowerofTwoLessThan(n int) (int) {
   res := 0;
   for i:=n; i>=1; i-- {

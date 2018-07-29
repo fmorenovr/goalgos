@@ -24,24 +24,24 @@ func Merge(arr []interface{}, comp goutils.TypeComparator, low, mid, high int)()
   n1 := mid - low + 1;
   n2 := high - mid;
   L := make([]interface{}, n1)
-  H := make([]interface{}, n2)
-  // Copy data to temp arrays Low[] and High[]
+  R := make([]interface{}, n2)
+  // Copy data to temp arrays Left[] and Right[]
   for i := 0; i < n1; i++{
     L[i] = arr[low + i]
   }
   for j := 0; j < n2; j++ {
-    H[j] = arr[mid+1+j]
+    R[j] = arr[mid+1+j]
   }
   // Merge the temp arrays back into arr[low..high]
   i := 0 // Initial index of first subarray
   j := 0 // Initial index of second subarray
   k := low // Initial index of merged subarray
   for i < n1 && j < n2 {
-    if comp(L[i], H[j]) == -1 || comp(L[i], H[j]) == 0 {
+    if comp(L[i], R[j]) == -1 || comp(L[i], R[j]) == 0 {
       arr[k] = L[i]
       i+=1
     } else{
-      arr[k] = H[j]
+      arr[k] = R[j]
       j+=1
     }
     k+=1
@@ -54,7 +54,7 @@ func Merge(arr []interface{}, comp goutils.TypeComparator, low, mid, high int)()
   }
   // Copy the remaining elements of R[], if there are any
   for j < n2 {
-    arr[k] = H[j];
+    arr[k] = R[j];
     j+=1
     k+=1
   }
