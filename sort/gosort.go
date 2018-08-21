@@ -5,6 +5,7 @@ import(
   "github.com/jenazads/goutils"
 )
 
+// GoSort object
 type GoSort struct {
   values     []interface{}
   comparator goutils.TypeComparator
